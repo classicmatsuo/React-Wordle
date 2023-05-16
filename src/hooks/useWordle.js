@@ -41,7 +41,9 @@ const useWordle = (solution) => {
   // add one to the turn state
   const addNewGuess = (formattedGuess) => {
     if (!WORDS.includes(currentGuess)) {
-      alert("Word not in list!");
+      alert(
+        "Bro, w-w-w-what are you trying to say? Even I know that's not a word. I think."
+      );
       return;
     }
     if (currentGuess === solution) {
