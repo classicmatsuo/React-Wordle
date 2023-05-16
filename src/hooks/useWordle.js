@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { WORDS } from "../words";
 
 const useWordle = (solution) => {
   const [turn, setTurn] = useState(0);
@@ -39,6 +40,10 @@ const useWordle = (solution) => {
   // update the isCorrect state if the guess is correct
   // add one to the turn state
   const addNewGuess = (formattedGuess) => {
+    if (!WORDS.includes(currentGuess)) {
+      alert("Word not in list!");
+      return;
+    }
     if (currentGuess === solution) {
       setIsCorrect(true);
     }
@@ -70,7 +75,6 @@ const useWordle = (solution) => {
           return;
         }
       });
-
       return prevUsedKeys;
     });
     setCurrentGuess("");
