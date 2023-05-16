@@ -16,8 +16,13 @@ export default function Keypad({ usedKeys, handleKeyup }) {
       {letters &&
         letters.map((l) => {
           const color = usedKeys[l.key];
+          const virtualKey = l.key;
           return (
-            <div key={l.key} className={color} onClick={handleKeyup}>
+            <div
+              key={l.key}
+              className={color}
+              onClick={() => handleKeyup({ virtualKey })}
+            >
               {l.key}
             </div>
           );

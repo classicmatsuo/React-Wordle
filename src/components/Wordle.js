@@ -13,21 +13,21 @@ export default function Wordle({ solution }) {
 
   useEffect(() => {
     window.addEventListener("keyup", handleKeyup);
-    // window.addEventListener("touchstart", handleKeyup);
+    // window.addEventListener("click", handleKeyup);
 
     if (isCorrect) {
       setTimeout(() => setShowModal(true), 2000);
       window.removeEventListener("keyup", handleKeyup);
-      // window.removeEventListener("touchstart", handleKeyup);
+      // window.removeEventListener("click", handleKeyup);
     }
     if (turn > 5) {
       setTimeout(() => setShowModal(true), 2000);
       window.removeEventListener("keyup", handleKeyup);
-      // window.removeEventListener("touchstart", handleKeyup);
+      // window.removeEventListener("click", handleKeyup);
     }
 
     return () => window.removeEventListener("keyup", handleKeyup);
-    //  && window.removeEventListener("touchstart", handleKeyup);
+    // && window.removeEventListener("click", handleKeyup);
   }, [handleKeyup, isCorrect, turn]);
 
   return (

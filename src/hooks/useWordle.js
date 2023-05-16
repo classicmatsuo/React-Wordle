@@ -78,9 +78,9 @@ const useWordle = (solution) => {
 
   // handle keyup event & track current guess
   // if user presses enter, add the new guess
-  const handleKeyup = ({ key }) => {
-    console.log("yay keyup events");
-    if (key === "Enter") {
+  const handleKeyup = ({ virtualKey }) => {
+    console.log("yay keyup events " + virtualKey);
+    if (virtualKey === "Enter") {
       // only add guess if turn is less than 5
       if (turn > 5) {
         console.log("you used all your guesses!");
@@ -99,13 +99,13 @@ const useWordle = (solution) => {
       const formatted = formatGuess();
       addNewGuess(formatted);
     }
-    if (key === "Backspace") {
+    if (virtualKey === "Backspace") {
       setCurrentGuess((prev) => prev.slice(0, -1));
       return;
     }
-    if (/^[A-Za-z]$/.test(key)) {
+    if (/^[A-Za-z0-9]$/.test(virtualKey)) {
       if (currentGuess.length < 5) {
-        setCurrentGuess((prev) => prev + key);
+        setCurrentGuess((prev) => prev + virtualKey);
       }
     }
   };
