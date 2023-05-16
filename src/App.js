@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Brojdle (aka Room Friends) v1.0.0</h1>
+      <h1>Brojdle (aka Room Friends) v1.1.4</h1>
       {solution && <Wordle solution={solution} />}
     </div>
   );
