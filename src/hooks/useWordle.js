@@ -44,6 +44,7 @@ const useWordle = (solution) => {
       alert(
         "Bro, w-w-w-what are you trying to say? Even I know that's not a word. I think."
       );
+      setCurrentGuess("");
       return;
     }
     if (currentGuess === solution) {

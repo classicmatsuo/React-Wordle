@@ -1,4 +1,6 @@
 export const WORDS = [
+  "cindy",
+  "carol",
   "floor",
   "brush",
   "broom",
